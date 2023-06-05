@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.smartstudenthelper.model.Task;
 
-@Database(entities = {Task.class}, version = 31, exportSchema = false)
+@Database(entities = {Task.class}, version = 32, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();
 }
