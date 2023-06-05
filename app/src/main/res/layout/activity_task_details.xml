@@ -13,12 +13,48 @@
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <EditText
-        android:id="@+id/text"
+        android:id="@+id/taskName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
+        android:gravity="top"
         android:hint="@string/task_text"
         android:minHeight="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/taskCommentary"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
         android:gravity="top"
-        android:padding="16dp"/>
+        android:hint="@string/task_commentary"
+        android:minHeight="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/taskDeadline"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="top"
+        android:hint="@string/task_deadline"
+        android:minHeight="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/taskExecutionTime"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="top"
+        android:hint="@string/task_execution_time"
+        android:minHeight="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/taskReminderDate"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="top"
+        android:hint="@string/task_reminder_date"
+        android:minHeight="200dp"
+        android:padding="16dp" />
 
 </LinearLayout>

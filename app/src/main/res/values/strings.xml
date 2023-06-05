@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">SmartStudentHelper</string>
 
-    <string name="task_text">Введите текст заметки</string>
+    <string name="task_text">Название задачи</string>
     <string name="task_details_title">Заметка</string>
     <string name="save">Сохранить</string>
     <string name="completed">Выполнение</string>
+    <string name="task_commentary">Комментарий к задаче</string>
+    <string name="task_deadline">Дата сдачи задания</string>
+    <string name="task_execution_time">Время выполнения задачи</string>
+    <string name="task_reminder_date">Дата напоминания</string>
 </resources>
