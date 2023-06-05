@@ -8,13 +8,10 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Note implements Parcelable {
+public class Task implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     public int uid;
-
-    @ColumnInfo(name = "text")
-    public String text;
 
     @ColumnInfo(name = "timestamp")
     public long timestamp;
@@ -22,7 +19,10 @@ public class Note implements Parcelable {
     @ColumnInfo(name = "done")
     public boolean done;
 
-    public Note() {
+    @ColumnInfo(name = "text")
+    public String name;
+
+    public Task() {
     }
 
     @Override
@@ -30,26 +30,26 @@ public class Note implements Parcelable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Note note = (Note) o;
+        Task note = (Task) o;
 
         if (uid != note.uid) return false;
         if (timestamp != note.timestamp) return false;
         if (done != note.done) return false;
-        return text != null ? text.equals(note.text) : note.text == null;
+        return name != null ? name.equals(note.name) : note.name == null;
     }
 
     @Override
     public int hashCode() {
         int result = uid;
-        result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (int) (timestamp ^ (timestamp >>> 32));
         result = 31 * result + (done ? 1 : 0);
         return result;
     }
 
-    protected Note(Parcel in) {
+    protected Task(Parcel in) {
         uid = in.readInt();
-        text = in.readString();
+        name = in.readString();
         timestamp = in.readLong();
         done = in.readByte() != 0;
     }
@@ -57,7 +57,7 @@ public class Note implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(uid);
-        dest.writeString(text);
+        dest.writeString(name);
         dest.writeLong(timestamp);
         dest.writeByte((byte) (done ? 1 : 0));
     }
@@ -67,15 +67,15 @@ public class Note implements Parcelable {
         return 0;
     }
 
-    public static final Creator<Note> CREATOR = new Creator<Note>() {
+    public static final Creator<Task> CREATOR = new Creator<Task>() {
         @Override
-        public Note createFromParcel(Parcel in) {
-            return new Note(in);
+        public Task createFromParcel(Parcel in) {
+            return new Task(in);
         }
 
         @Override
-        public Note[] newArray(int size) {
-            return new Note[size];
+        public Task[] newArray(int size) {
+            return new Task[size];
         }
     };
 }

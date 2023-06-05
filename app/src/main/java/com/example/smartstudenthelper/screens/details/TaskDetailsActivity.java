@@ -14,20 +14,20 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.smartstudenthelper.App;
 import com.example.smartstudenthelper.R;
-import com.example.smartstudenthelper.model.Note;
+import com.example.smartstudenthelper.model.Task;
 
-public class NoteDetailsActivity extends AppCompatActivity {
+public class TaskDetailsActivity extends AppCompatActivity {
 
-    private static final String EXTRA_NOTE = "NoteDetailsActivity.EXTRA_NOTE";
+    private static final String EXTRA_TASK = "TaskDetailsActivity.EXTRA_TASK";
 
-    private Note note;
+    private Task task;
 
     private EditText editText;
 
-    public static void start(Activity caller, Note note) {
-        Intent intent = new Intent(caller, NoteDetailsActivity.class);
-        if (note != null) {
-            intent.putExtra(EXTRA_NOTE, note);
+    public static void start(Activity caller, Task task) {
+        Intent intent = new Intent(caller, TaskDetailsActivity.class);
+        if (task != null) {
+            intent.putExtra(EXTRA_TASK, task);
         }
         caller.startActivity(intent);
     }
@@ -36,22 +36,22 @@ public class NoteDetailsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_note_details);
+        setContentView(R.layout.activity_task_details);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        setTitle(getString(R.string.note_details_title));
+        setTitle(getString(R.string.task_details_title));
 
         editText = findViewById(R.id.text);
 
-        if (getIntent().hasExtra(EXTRA_NOTE)) {
-            note = getIntent().getParcelableExtra(EXTRA_NOTE);
-            editText.setText(note.text);
+        if (getIntent().hasExtra(EXTRA_TASK)) {
+            task = getIntent().getParcelableExtra(EXTRA_TASK);
+            editText.setText(task.name);
         } else {
-            note = new Note();
+            task = new Task();
         }
     }
 
@@ -69,13 +69,13 @@ public class NoteDetailsActivity extends AppCompatActivity {
                 break;
             case R.id.action_save:
                 if (editText.getText().length() > 0) {
-                    note.text = editText.getText().toString();
-                    note.done = false;
-                    note.timestamp = System.currentTimeMillis();
-                    if (getIntent().hasExtra(EXTRA_NOTE)) {
-                        App.getInstance().getNoteDao().update(note);
+                    task.name = editText.getText().toString();
+                    task.done = false;
+                    task.timestamp = System.currentTimeMillis();
+                    if (getIntent().hasExtra(EXTRA_TASK)) {
+                        App.getInstance().getTaskDao().update(task);
                     } else {
-                        App.getInstance().getNoteDao().insert(note);
+                        App.getInstance().getTaskDao().insert(task);
                     }
                     finish();
                 }

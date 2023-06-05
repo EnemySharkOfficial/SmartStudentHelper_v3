@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartstudenthelper.R;
-import com.example.smartstudenthelper.model.Note;
-import com.example.smartstudenthelper.screens.details.NoteDetailsActivity;
+import com.example.smartstudenthelper.model.Task;
+import com.example.smartstudenthelper.screens.details.TaskDetailsActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NoteDetailsActivity.start(MainActivity.this, null);
+                TaskDetailsActivity.start(MainActivity.this, null);
             }
         });
 
         MainViewModel mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        mainViewModel.getNoteLiveData().observe(this, new Observer<List<Note>>() {
+        mainViewModel.getTaskLiveData().observe(this, new Observer<List<Task>>() {
             @Override
-            public void onChanged(List<Note> tasks) {
+            public void onChanged(List<Task> tasks) {
                 adapter.setItems(tasks);
             }
         });

@@ -5,12 +5,12 @@ import android.app.Application;
 import androidx.room.Room;
 
 import com.example.smartstudenthelper.data.AppDatabase;
-import com.example.smartstudenthelper.data.NoteDao;
+import com.example.smartstudenthelper.data.TaskDao;
 
 public class App extends Application {
 
     private AppDatabase database;
-    private NoteDao noteDao;
+    private TaskDao taskDao;
 
     private static App instance;
 
@@ -26,10 +26,10 @@ public class App extends Application {
 
         database = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "app-db-name")
-                .allowMainThreadQueries()
+                .allowMainThreadQueries().fallbackToDestructiveMigration()
                 .build();
 
-        noteDao = database.noteDao();
+        taskDao = database.taskDao();
     }
 
     public AppDatabase getDatabase() {
@@ -40,11 +40,11 @@ public class App extends Application {
         this.database = database;
     }
 
-    public NoteDao getNoteDao() {
-        return noteDao;
+    public TaskDao getTaskDao() {
+        return taskDao;
     }
 
-    public void setNoteDao(NoteDao noteDao) {
-        this.noteDao = noteDao;
+    public void setTaskDao(TaskDao taskDao) {
+        this.taskDao = taskDao;
     }
 }

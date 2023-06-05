@@ -3,9 +3,9 @@ package com.example.smartstudenthelper.data;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
-import com.example.smartstudenthelper.model.Note;
+import com.example.smartstudenthelper.model.Task;
 
-@Database(entities = {Note.class}, version = 30, exportSchema = false)
+@Database(entities = {Task.class}, version = 31, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract NoteDao noteDao();
+    public abstract TaskDao taskDao();
 }
