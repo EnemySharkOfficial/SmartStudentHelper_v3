@@ -49,7 +49,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
         if (getIntent().hasExtra(EXTRA_TASK)) {
             task = getIntent().getParcelableExtra(EXTRA_TASK);
-            editText.setText(task.name);
+            editText.setText(task.getName());
         } else {
             task = new Task();
         }
@@ -69,9 +69,9 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 break;
             case R.id.action_save:
                 if (editText.getText().length() > 0) {
-                    task.name = editText.getText().toString();
-                    task.done = false;
-                    task.timestamp = System.currentTimeMillis();
+                    task.setName(editText.getText().toString());
+                    task.setDone(false);
+                    task.setTimestamp(System.currentTimeMillis());
                     if (getIntent().hasExtra(EXTRA_TASK)) {
                         App.getInstance().getTaskDao().update(task);
                     } else {

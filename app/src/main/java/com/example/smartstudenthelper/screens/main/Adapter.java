@@ -29,13 +29,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
         sortedList = new SortedList<>(Task.class, new SortedList.Callback<Task>() {
             @Override
             public int compare(Task o1, Task o2) {
-                if (!o2.done && o1.done) {
+                if (!o2.isDone() && o1.isDone()) {
                     return 1;
                 }
-                if (o2.done && !o1.done) {
+                if (o2.isDone() && !o1.isDone()) {
                     return -1;
                 }
-                return (int) (o2.timestamp - o1.timestamp);
+                return (int) (o2.getTimestamp() - o1.getTimestamp());
             }
 
             @Override
@@ -50,7 +50,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
 
             @Override
             public boolean areItemsTheSame(Task item1, Task item2) {
-                return item1.uid == item2.uid;
+                return item1.getUid() == item2.getUid();
             }
 
             @Override
@@ -126,7 +126,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
                     if (!silentUpdate) {
-                        task.done = checked;
+                        task.setDone(checked);
                         App.getInstance().getTaskDao().update(task);
                     }
                     updateStrokeOut();
@@ -138,16 +138,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
         public void bind(Task task) {
             this.task = task;
 
-            taskText.setText(task.name);
+            taskText.setText(task.getName());
             updateStrokeOut();
 
             silentUpdate = true;
-            completed.setChecked(task.done);
+            completed.setChecked(task.isDone());
             silentUpdate = false;
         }
 
         private void updateStrokeOut() {
-            if (task.done) {
+            if (task.isDone()) {
                 taskText.setPaintFlags(taskText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             } else {
                 taskText.setPaintFlags(taskText.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
