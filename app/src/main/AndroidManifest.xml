@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.details.NoteDetailsActivity"
+        <activity android:name=".screens.details.TaskDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">SmartStudentHelper</string>
 
-    <string name="note_text">Введите текст заметки</string>
-    <string name="note_details_title">Заметка</string>
+    <string name="task_text">Введите текст заметки</string>
+    <string name="task_details_title">Заметка</string>
     <string name="save">Сохранить</string>
     <string name="completed">Выполнение</string>
 </resources>

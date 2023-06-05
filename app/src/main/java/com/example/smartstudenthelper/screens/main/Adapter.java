@@ -15,20 +15,20 @@ import androidx.recyclerview.widget.SortedList;
 
 import com.example.smartstudenthelper.App;
 import com.example.smartstudenthelper.R;
-import com.example.smartstudenthelper.model.Note;
-import com.example.smartstudenthelper.screens.details.NoteDetailsActivity;
+import com.example.smartstudenthelper.model.Task;
+import com.example.smartstudenthelper.screens.details.TaskDetailsActivity;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.NoteViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.TaskViewHolder> {
 
-    private SortedList<Note> sortedList;
+    private SortedList<Task> sortedList;
 
     public Adapter() {
 
-        sortedList = new SortedList<>(Note.class, new SortedList.Callback<Note>() {
+        sortedList = new SortedList<>(Task.class, new SortedList.Callback<Task>() {
             @Override
-            public int compare(Note o1, Note o2) {
+            public int compare(Task o1, Task o2) {
                 if (!o2.done && o1.done) {
                     return 1;
                 }
@@ -44,12 +44,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.NoteViewHolder> {
             }
 
             @Override
-            public boolean areContentsTheSame(Note oldItem, Note newItem) {
+            public boolean areContentsTheSame(Task oldItem, Task newItem) {
                 return oldItem.equals(newItem);
             }
 
             @Override
-            public boolean areItemsTheSame(Note item1, Note item2) {
+            public boolean areItemsTheSame(Task item1, Task item2) {
                 return item1.uid == item2.uid;
             }
 
@@ -72,13 +72,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.NoteViewHolder> {
 
     @NonNull
     @Override
-    public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new NoteViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_note_list, parent, false));
+    public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new TaskViewHolder(
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_task_list, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         holder.bind(sortedList.get(position));
     }
 
@@ -87,38 +87,38 @@ public class Adapter extends RecyclerView.Adapter<Adapter.NoteViewHolder> {
         return sortedList.size();
     }
 
-    public void setItems(List<Note> notes) {
-        sortedList.replaceAll(notes);
+    public void setItems(List<Task> tasks) {
+        sortedList.replaceAll(tasks);
     }
 
-    static class NoteViewHolder extends RecyclerView.ViewHolder {
+    static class TaskViewHolder extends RecyclerView.ViewHolder {
 
-        TextView noteText;
+        TextView taskText;
         CheckBox completed;
         View delete;
 
-        Note note;
+        Task task;
 
         boolean silentUpdate;
 
-        public NoteViewHolder(@NonNull final View itemView) {
+        public TaskViewHolder(@NonNull final View itemView) {
             super(itemView);
 
-            noteText = itemView.findViewById(R.id.note_text);
+            taskText = itemView.findViewById(R.id.task_text);
             completed = itemView.findViewById(R.id.completed);
             delete = itemView.findViewById(R.id.delete);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    NoteDetailsActivity.start((Activity) itemView.getContext(), note);
+                    TaskDetailsActivity.start((Activity) itemView.getContext(), task);
                 }
             });
 
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    App.getInstance().getNoteDao().delete(note);
+                    App.getInstance().getTaskDao().delete(task);
                 }
             });
 
@@ -126,8 +126,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.NoteViewHolder> {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
                     if (!silentUpdate) {
-                        note.done = checked;
-                        App.getInstance().getNoteDao().update(note);
+                        task.done = checked;
+                        App.getInstance().getTaskDao().update(task);
                     }
                     updateStrokeOut();
                 }
@@ -135,22 +135,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.NoteViewHolder> {
 
         }
 
-        public void bind(Note note) {
-            this.note = note;
+        public void bind(Task task) {
+            this.task = task;
 
-            noteText.setText(note.text);
+            taskText.setText(task.name);
             updateStrokeOut();
 
             silentUpdate = true;
-            completed.setChecked(note.done);
+            completed.setChecked(task.done);
             silentUpdate = false;
         }
 
         private void updateStrokeOut() {
-            if (note.done) {
-                noteText.setPaintFlags(noteText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            if (task.done) {
+                taskText.setPaintFlags(taskText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             } else {
-                noteText.setPaintFlags(noteText.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
+                taskText.setPaintFlags(taskText.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
             }
         }
     }
