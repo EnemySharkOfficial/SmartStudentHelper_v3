@@ -3,6 +3,7 @@ package com.example.smartstudenthelper.screens.details;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -16,13 +17,21 @@ import com.example.smartstudenthelper.App;
 import com.example.smartstudenthelper.R;
 import com.example.smartstudenthelper.model.Task;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class TaskDetailsActivity extends AppCompatActivity {
 
     private static final String EXTRA_TASK = "TaskDetailsActivity.EXTRA_TASK";
 
     private Task task;
 
-    private EditText editText;
+    private EditText name;
+    private EditText commentary;
+    private EditText deadline;
+    private EditText executionTime;
+    private EditText reminderDate;
 
     public static void start(Activity caller, Task task) {
         Intent intent = new Intent(caller, TaskDetailsActivity.class);
@@ -32,6 +41,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         caller.startActivity(intent);
     }
 
+    //Отображение заметки
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +55,42 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
         setTitle(getString(R.string.task_details_title));
 
-        editText = findViewById(R.id.text);
+        name = findViewById(R.id.taskName);
+        commentary = findViewById(R.id.taskCommentary);
+        deadline = findViewById(R.id.taskDeadline);
+        executionTime = findViewById(R.id.taskExecutionTime);
+        reminderDate = findViewById(R.id.taskReminderDate);
 
-        if (getIntent().hasExtra(EXTRA_TASK)) {
+        if (getIntent().hasExtra(EXTRA_TASK))
+        {
             task = getIntent().getParcelableExtra(EXTRA_TASK);
-            editText.setText(task.getName());
-        } else {
+            name.setText(task.getName());
+
+            if(task.getCommentary().length() > 0)
+            {
+                commentary.setText(task.getCommentary());
+            }
+
+            if(task.getDeadline() != 0)
+            {
+                String dateString = DateFormat.format("dd.MM.yyyy", new Date(task.getDeadline())).toString();
+                deadline.setText(dateString);
+            }
+
+            if(task.getExecutionTime() != 0)
+            {
+                String dateString = DateFormat.format("h:mm", new Date(task.getExecutionTime())).toString();
+                executionTime.setText(dateString);
+            }
+
+            if(task.getReminderDate() != 0)
+            {
+                String dateString = DateFormat.format("dd.MM.yyyy", new Date(task.getReminderDate())).toString();
+                reminderDate.setText(dateString);
+            }
+        }
+        else
+        {
             task = new Task();
         }
     }
@@ -61,6 +101,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    //Сохранение изменений в заметке в поля класса
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -68,13 +109,72 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.action_save:
-                if (editText.getText().length() > 0) {
-                    task.setName(editText.getText().toString());
+                if (name.getText().length() > 0)
+                {
+                    task.setName(name.getText().toString());
                     task.setDone(false);
                     task.setTimestamp(System.currentTimeMillis());
-                    if (getIntent().hasExtra(EXTRA_TASK)) {
+
+                    if(commentary.getText().length() > 0)
+                    {
+                        task.setCommentary(commentary.getText().toString());
+                    }
+
+                    if(deadline.getText().length() > 0)
+                    {
+                        try
+                        {
+                            String dateString = deadline.getText().toString();
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+                            Date date = sdf.parse(dateString);
+                            long startDate = date.getTime();
+                            task.setDeadline(startDate);
+
+                        }
+                        catch (ParseException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    if(executionTime.getText().length() > 0)
+                    {
+                        try
+                        {
+                            String dateString = executionTime.getText().toString();
+                            SimpleDateFormat sdf = new SimpleDateFormat("h:mm");
+                            Date date = sdf.parse(dateString);
+                            long startDate = date.getTime();
+                            task.setExecutionTime(startDate);
+
+                        } catch (ParseException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    if(reminderDate.getText().length() > 0)
+                    {
+                        try
+                        {
+                            String dateString = reminderDate.getText().toString();
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+                            Date date = sdf.parse(dateString);
+                            long startDate = date.getTime();
+                            task.setReminderDate(startDate);
+
+                        } catch (ParseException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    if (getIntent().hasExtra(EXTRA_TASK))
+                    {
                         App.getInstance().getTaskDao().update(task);
-                    } else {
+                    }
+                    else
+                    {
                         App.getInstance().getTaskDao().insert(task);
                     }
                     finish();
