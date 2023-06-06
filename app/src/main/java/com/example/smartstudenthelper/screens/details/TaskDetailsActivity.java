@@ -3,6 +3,7 @@ package com.example.smartstudenthelper.screens.details;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,7 +67,8 @@ public class TaskDetailsActivity extends AppCompatActivity {
             task = getIntent().getParcelableExtra(EXTRA_TASK);
             name.setText(task.getName());
 
-            if(task.getCommentary().length() > 0)
+
+            if(TextUtils.isEmpty(task.getCommentary()))
             {
                 commentary.setText(task.getCommentary());
             }
