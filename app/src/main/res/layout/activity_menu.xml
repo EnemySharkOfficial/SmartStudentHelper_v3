@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="304dp"
+        android:layout_marginBottom="382dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="FAQ" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="167dp"
+        android:layout_marginBottom="519dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Курсовые работы" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="213dp"
+        android:layout_marginBottom="473dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Экзамены/Зачеты" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="259dp"
+        android:layout_marginBottom="427dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Долги" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="-34dp"
+        android:layout_marginBottom="675dp"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <TextView
+        android:id="@+id/TasksText"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="77dp"
+        android:layout_marginBottom="609dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Обычные задания" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="122dp"
+        android:layout_marginBottom="564dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Контрольные работы" />
+
+    <Button
+        android:id="@+id/Tasks"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="609dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/FAQ"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="383dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/debts"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="427dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/exams"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="213dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="470dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/courseTasks"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="513dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/controlTasks"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="122dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="561dp"
+        android:text="+" />
+
+</RelativeLayout>

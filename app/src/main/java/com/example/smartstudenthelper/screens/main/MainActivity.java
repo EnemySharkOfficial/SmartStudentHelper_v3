@@ -1,5 +1,6 @@
 package com.example.smartstudenthelper.screens.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.smartstudenthelper.MenuActivity;
 import com.example.smartstudenthelper.R;
 import com.example.smartstudenthelper.model.Task;
 import com.example.smartstudenthelper.screens.details.TaskDetailsActivity;
@@ -40,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                TaskDetailsActivity.start(MainActivity.this, null);
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MainActivity.this, MenuActivity.class);
+                MainActivity.this.startActivity(myIntent);
             }
         });
 
