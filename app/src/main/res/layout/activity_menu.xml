@@ -83,7 +83,7 @@
         android:text="Обычные задания" />
 
     <TextView
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/controlTasksText"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

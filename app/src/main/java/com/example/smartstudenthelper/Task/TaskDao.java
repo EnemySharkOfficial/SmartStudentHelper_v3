@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.data;
+package com.example.smartstudenthelper.Task;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,8 +7,6 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
-
-import com.example.smartstudenthelper.model.Task;
 
 import java.util.List;
 
@@ -35,5 +33,4 @@ public interface TaskDao {
 
     @Delete
     void delete(Task task);
-
 }
