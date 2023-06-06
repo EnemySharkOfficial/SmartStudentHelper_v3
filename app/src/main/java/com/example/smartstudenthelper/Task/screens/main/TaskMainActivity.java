@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.screens.main;
+package com.example.smartstudenthelper.Task.screens.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartstudenthelper.MenuActivity;
 import com.example.smartstudenthelper.R;
-import com.example.smartstudenthelper.model.Task;
-import com.example.smartstudenthelper.screens.details.TaskDetailsActivity;
+import com.example.smartstudenthelper.Task.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class TaskMainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
@@ -44,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent myIntent = new Intent(MainActivity.this, MenuActivity.class);
-                MainActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(TaskMainActivity.this, MenuActivity.class);
+                TaskMainActivity.this.startActivity(myIntent);
             }
         });
 
-        MainViewModel mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        TaskMainViewModel mainViewModel = new ViewModelProvider(this).get(TaskMainViewModel.class);
         mainViewModel.getTaskLiveData().observe(this, new Observer<List<Task>>() {
             @Override
             public void onChanged(List<Task> tasks) {

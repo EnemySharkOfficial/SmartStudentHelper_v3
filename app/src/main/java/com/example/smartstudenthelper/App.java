@@ -4,13 +4,17 @@ import android.app.Application;
 
 import androidx.room.Room;
 
-import com.example.smartstudenthelper.data.AppDatabase;
-import com.example.smartstudenthelper.data.TaskDao;
+import com.example.smartstudenthelper.Task.AppDatabase;
+import com.example.smartstudenthelper.Task.TaskDao;
+import com.example.smartstudenthelper.СontrolTask.ControlTaskDao;
+import com.example.smartstudenthelper.СontrolTask.ControlTaskDatabase;
 
 public class App extends Application {
 
-    private AppDatabase database;
+    private AppDatabase taskDB;
+    private ControlTaskDatabase controlTaskDB;
     private TaskDao taskDao;
+    private ControlTaskDao controlTaskDao;
 
     private static App instance;
 
@@ -24,27 +28,42 @@ public class App extends Application {
 
         instance = this;
 
-        database = Room.databaseBuilder(getApplicationContext(),
+        taskDB = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "app-db-name")
                 .allowMainThreadQueries().fallbackToDestructiveMigration()
                 .build();
 
-        taskDao = database.taskDao();
+        controlTaskDB = Room.databaseBuilder(getApplicationContext(),
+                        ControlTaskDatabase.class, "control-task-database")
+                .allowMainThreadQueries().fallbackToDestructiveMigration()
+                .build();
+
+        taskDao = taskDB.taskDao();
+        controlTaskDao = controlTaskDB.controlTaskDao();
     }
 
-    public AppDatabase getDatabase() {
-        return database;
+    public AppDatabase getTaskDB() {
+        return taskDB;
     }
-
-    public void setDatabase(AppDatabase database) {
-        this.database = database;
+    public ControlTaskDatabase getControlTaskDB() {
+        return controlTaskDB;
     }
-
+    public void setTaskDB(AppDatabase taskDB) {
+        this.taskDB = taskDB;
+    }
+    public void setControlTaskDB(ControlTaskDatabase controlTaskDB) {
+        this.controlTaskDB = controlTaskDB;
+    }
     public TaskDao getTaskDao() {
         return taskDao;
     }
-
+    public ControlTaskDao getControlTaskDao() {
+        return controlTaskDao;
+    }
     public void setTaskDao(TaskDao taskDao) {
         this.taskDao = taskDao;
+    }
+    public void setControlTaskDao(ControlTaskDao controlTaskDao) {
+        this.controlTaskDao = controlTaskDao;
     }
 }

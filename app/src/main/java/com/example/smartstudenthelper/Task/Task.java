@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.model;
+package com.example.smartstudenthelper.Task;
 
 import android.os.Parcel;
 import android.os.Parcelable;

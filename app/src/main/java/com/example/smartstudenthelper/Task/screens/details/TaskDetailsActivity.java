@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.screens.details;
+package com.example.smartstudenthelper.Task.screens.details;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.smartstudenthelper.App;
 import com.example.smartstudenthelper.R;
-import com.example.smartstudenthelper.model.Task;
+import com.example.smartstudenthelper.Task.Task;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -68,7 +68,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
             name.setText(task.getName());
 
 
-            if(TextUtils.isEmpty(task.getCommentary()))
+            if(!TextUtils.isEmpty(task.getCommentary()))
             {
                 commentary.setText(task.getCommentary());
             }

@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.screens.main;
+package com.example.smartstudenthelper.Task.screens.main;
 
 import android.app.Activity;
 import android.graphics.Paint;
@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.SortedList;
 
 import com.example.smartstudenthelper.App;
 import com.example.smartstudenthelper.R;
-import com.example.smartstudenthelper.model.Task;
-import com.example.smartstudenthelper.screens.details.TaskDetailsActivity;
+import com.example.smartstudenthelper.Task.Task;
+import com.example.smartstudenthelper.Task.screens.details.TaskDetailsActivity;
 
 import java.util.List;
 
