@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.smartstudenthelper.CourseTask.screens.details.CourseTaskDetailsActivity;
+import com.example.smartstudenthelper.CourseTask.screens.main.CourseTaskMainActivity;
 import com.example.smartstudenthelper.ExamTask.screens.details.ExamTaskDetailsActivity;
 import com.example.smartstudenthelper.ExamTask.screens.main.ExamTaskMainActivity;
 import com.example.smartstudenthelper.Task.screens.details.TaskDetailsActivity;
@@ -82,6 +84,25 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        Button addCourseTask = findViewById(R.id.addCourseTask);
+        addCourseTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, CourseTaskDetailsActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+                System.out.println("");
+            }
+        });
 
+        TextView showCourseTasks = findViewById(R.id.showCourseTasks);
+        showCourseTasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, CourseTaskMainActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+            }
+        });
     }
 }
