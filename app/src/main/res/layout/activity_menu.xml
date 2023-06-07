@@ -30,7 +30,7 @@
         android:text="Курсовые работы" />
 
     <TextView
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/examTaskText"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -131,7 +131,7 @@
         android:text="+" />
 
     <Button
-        android:id="@+id/exams"
+        android:id="@+id/examTasks"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

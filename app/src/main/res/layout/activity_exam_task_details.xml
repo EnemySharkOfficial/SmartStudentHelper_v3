@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <EditText
+        android:id="@+id/examTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="top"
+        android:hint="@string/task_text"
+        android:minHeight="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/examTaskCommentary"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="top"
+        android:hint="@string/task_commentary"
+        android:minHeight="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/examTaskDeadline"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="top"
+        android:hint="@string/task_deadline"
+        android:minHeight="200dp"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/examTaskReminderDate"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="top"
+        android:hint="@string/task_reminder_date"
+        android:minHeight="200dp"
+        android:padding="16dp" />
+
+</LinearLayout>

@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.smartstudenthelper.ExamTask.screens.details.ExamTaskDetailsActivity;
+import com.example.smartstudenthelper.ExamTask.screens.main.ExamTaskMainActivity;
 import com.example.smartstudenthelper.Task.screens.details.TaskDetailsActivity;
 import com.example.smartstudenthelper.Task.screens.main.TaskMainActivity;
 import com.example.smartstudenthelper.СontrolTask.screens.details.ControlTaskDetailsActivity;
@@ -59,5 +61,27 @@ public class MenuActivity extends AppCompatActivity {
                 MenuActivity.this.startActivity(myIntent);
             }
         });
+
+        Button examTasks = findViewById(R.id.examTasks);
+        examTasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, ExamTaskDetailsActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+            }
+        });
+
+        TextView examTasksTextView = findViewById(R.id.examTaskText);
+        examTasksTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, ExamTaskMainActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+            }
+        });
+
+
     }
 }
