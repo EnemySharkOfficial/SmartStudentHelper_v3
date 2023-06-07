@@ -4,6 +4,8 @@ import android.app.Application;
 
 import androidx.room.Room;
 
+import com.example.smartstudenthelper.CourseTask.CourseTaskDao;
+import com.example.smartstudenthelper.CourseTask.CourseTaskDatabase;
 import com.example.smartstudenthelper.ExamTask.ExamTaskDao;
 import com.example.smartstudenthelper.ExamTask.ExamTaskDatabase;
 import com.example.smartstudenthelper.Task.AppDatabase;
@@ -19,6 +21,8 @@ public class App extends Application {
     private ControlTaskDao controlTaskDao;
     private ExamTaskDatabase examTaskDB;
     private ExamTaskDao examTaskDao;
+    private CourseTaskDatabase courseTaskDB;
+    private CourseTaskDao courseTaskDao;
 
     private static App instance;
 
@@ -47,9 +51,15 @@ public class App extends Application {
                 .allowMainThreadQueries().fallbackToDestructiveMigration()
                 .build();
 
+        courseTaskDB = Room.databaseBuilder(getApplicationContext(),
+                        CourseTaskDatabase.class, "course-task-database")
+                .allowMainThreadQueries().fallbackToDestructiveMigration()
+                .build();
+
         taskDao = taskDB.taskDao();
         controlTaskDao = controlTaskDB.controlTaskDao();
         examTaskDao = examTaskDB.examTaskDao();
+        courseTaskDao = courseTaskDB.courseTaskDao();
     }
 
     //Task
@@ -92,5 +102,19 @@ public class App extends Application {
     }
     public void setExamTaskDao(ExamTaskDao examTaskDao) {
         this.examTaskDao = examTaskDao;
+    }
+
+    //CourseTask
+    public CourseTaskDatabase getCourseTaskDB() {
+        return courseTaskDB;
+    }
+    public void setCourseTaskDB(CourseTaskDatabase courseTaskDB) {
+        this.courseTaskDB = courseTaskDB;
+    }
+    public CourseTaskDao getCourseTaskDao() {
+        return courseTaskDao;
+    }
+    public void setCourseTaskDao(CourseTaskDao courseTaskDao) {
+        this.courseTaskDao = courseTaskDao;
     }
 }
