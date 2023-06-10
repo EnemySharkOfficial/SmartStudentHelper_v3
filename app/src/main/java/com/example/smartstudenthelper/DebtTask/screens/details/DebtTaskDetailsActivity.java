@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.CourseTask.screens.details;
+package com.example.smartstudenthelper.DebtTask.screens.details;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,18 +15,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.smartstudenthelper.App;
-import com.example.smartstudenthelper.CourseTask.CourseTask;
+import com.example.smartstudenthelper.DebtTask.DebtTask;
 import com.example.smartstudenthelper.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CourseTaskDetailsActivity extends AppCompatActivity
+public class DebtTaskDetailsActivity extends AppCompatActivity
 {
-    private static final String EXTRA_TASK = "TaskDetailsActivity.EXTRA_TASK";
+    private static final String EXTRA_DEBTTASK = "DebtDetailsActivity.EXTRA_DEBTTASK";
 
-    private CourseTask courseTask;
+    private DebtTask debtTask;
 
     private EditText name;
     private EditText commentary;
@@ -34,10 +34,10 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
     private EditText executionTime;
     private EditText reminderDate;
 
-    public static void start(Activity caller, CourseTask courseTask) {
-        Intent intent = new Intent(caller, CourseTaskDetailsActivity.class);
-        if (courseTask != null) {
-            intent.putExtra(EXTRA_TASK, courseTask);
+    public static void start(Activity caller, DebtTask debtTask) {
+        Intent intent = new Intent(caller, DebtTaskDetailsActivity.class);
+        if (debtTask != null) {
+            intent.putExtra(EXTRA_DEBTTASK, debtTask);
         }
         caller.startActivity(intent);
     }
@@ -47,7 +47,7 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_course_task_details);
+        setContentView(R.layout.activity_debt_task_details);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,44 +56,44 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
 
         setTitle(getString(R.string.task_details_title));
 
-        name = findViewById(R.id.courseTaskName);
-        commentary = findViewById(R.id.courseTaskCommentary);
-        deadline = findViewById(R.id.courseTaskDeadline);
-        executionTime = findViewById(R.id.courseTaskExecutionTime);
-        reminderDate = findViewById(R.id.courseTaskReminderDate);
+        name = findViewById(R.id.debtTaskName);
+        commentary = findViewById(R.id.debtTaskCommentary);
+        deadline = findViewById(R.id.debtTaskDeadline);
+        executionTime = findViewById(R.id.debtTaskExecutionTime);
+        reminderDate = findViewById(R.id.debtTaskReminderDate);
 
-        if (getIntent().hasExtra(EXTRA_TASK))
+        if (getIntent().hasExtra(EXTRA_DEBTTASK))
         {
-            courseTask = getIntent().getParcelableExtra(EXTRA_TASK);
-            name.setText(courseTask.getName());
+            debtTask = getIntent().getParcelableExtra(EXTRA_DEBTTASK);
+            name.setText(debtTask.getName());
 
 
-            if(!TextUtils.isEmpty(courseTask.getCommentary()))
+            if(!TextUtils.isEmpty(debtTask.getCommentary()))
             {
-                commentary.setText(courseTask.getCommentary());
+                commentary.setText(debtTask.getCommentary());
             }
 
-            if(courseTask.getDeadline() != 0)
+            if(debtTask.getDeadline() != 0)
             {
-                String dateString = DateFormat.format("dd.MM.yyyy", new Date(courseTask.getDeadline())).toString();
+                String dateString = DateFormat.format("dd.MM.yyyy", new Date(debtTask.getDeadline())).toString();
                 deadline.setText(dateString);
             }
 
-            if(courseTask.getExecutionTime() != 0)
+            if(debtTask.getExecutionTime() != 0)
             {
-                String dateString = DateFormat.format("h:mm", new Date(courseTask.getExecutionTime())).toString();
+                String dateString = DateFormat.format("h:mm", new Date(debtTask.getExecutionTime())).toString();
                 executionTime.setText(dateString);
             }
 
-            if(courseTask.getReminderDate() != 0)
+            if(debtTask.getReminderDate() != 0)
             {
-                String dateString = DateFormat.format("dd.MM.yyyy", new Date(courseTask.getReminderDate())).toString();
+                String dateString = DateFormat.format("dd.MM.yyyy", new Date(debtTask.getReminderDate())).toString();
                 reminderDate.setText(dateString);
             }
         }
         else
         {
-            courseTask = new CourseTask();
+            debtTask = new DebtTask();
         }
     }
 
@@ -113,13 +113,13 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
             case R.id.action_save:
                 if (name.getText().length() > 0)
                 {
-                    courseTask.setName(name.getText().toString());
-                    courseTask.setDone(false);
-                    courseTask.setTimestamp(System.currentTimeMillis());
+                    debtTask.setName(name.getText().toString());
+                    debtTask.setDone(false);
+                    debtTask.setTimestamp(System.currentTimeMillis());
 
                     if(commentary.getText().length() > 0)
                     {
-                        courseTask.setCommentary(commentary.getText().toString());
+                        debtTask.setCommentary(commentary.getText().toString());
                     }
 
                     if(deadline.getText().length() > 0)
@@ -130,7 +130,7 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
                             SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
                             Date date = sdf.parse(dateString);
                             long startDate = date.getTime();
-                            courseTask.setDeadline(startDate);
+                            debtTask.setDeadline(startDate);
 
                         }
                         catch (ParseException e)
@@ -147,7 +147,7 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
                             SimpleDateFormat sdf = new SimpleDateFormat("h:mm");
                             Date date = sdf.parse(dateString);
                             long startDate = date.getTime();
-                            courseTask.setExecutionTime(startDate);
+                            debtTask.setExecutionTime(startDate);
 
                         } catch (ParseException e)
                         {
@@ -163,7 +163,7 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
                             SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
                             Date date = sdf.parse(dateString);
                             long startDate = date.getTime();
-                            courseTask.setReminderDate(startDate);
+                            debtTask.setReminderDate(startDate);
 
                         } catch (ParseException e)
                         {
@@ -171,13 +171,13 @@ public class CourseTaskDetailsActivity extends AppCompatActivity
                         }
                     }
 
-                    if (getIntent().hasExtra(EXTRA_TASK))
+                    if (getIntent().hasExtra(EXTRA_DEBTTASK))
                     {
-                        App.getInstance().getCourseTaskDao().update(courseTask);
+                        App.getInstance().getDebtTaskDao().update(debtTask);
                     }
                     else
                     {
-                        App.getInstance().getCourseTaskDao().insert(courseTask);
+                        App.getInstance().getDebtTaskDao().insert(debtTask);
                     }
                     finish();
                 }
