@@ -6,6 +6,9 @@ import androidx.room.Room;
 
 import com.example.smartstudenthelper.CourseTask.CourseTaskDao;
 import com.example.smartstudenthelper.CourseTask.CourseTaskDatabase;
+import com.example.smartstudenthelper.DebtTask.DebtTask;
+import com.example.smartstudenthelper.DebtTask.DebtTaskDao;
+import com.example.smartstudenthelper.DebtTask.DebtTaskDatabase;
 import com.example.smartstudenthelper.ExamTask.ExamTaskDao;
 import com.example.smartstudenthelper.ExamTask.ExamTaskDatabase;
 import com.example.smartstudenthelper.Task.AppDatabase;
@@ -23,6 +26,8 @@ public class App extends Application {
     private ExamTaskDao examTaskDao;
     private CourseTaskDatabase courseTaskDB;
     private CourseTaskDao courseTaskDao;
+    private DebtTaskDatabase debtTaskDB;
+    private DebtTaskDao debtTaskDao;
 
     private static App instance;
 
@@ -56,10 +61,16 @@ public class App extends Application {
                 .allowMainThreadQueries().fallbackToDestructiveMigration()
                 .build();
 
+        debtTaskDB = Room.databaseBuilder(getApplicationContext(),
+                        DebtTaskDatabase.class, "debt-task-database")
+                .allowMainThreadQueries().fallbackToDestructiveMigration()
+                .build();
+
         taskDao = taskDB.taskDao();
         controlTaskDao = controlTaskDB.controlTaskDao();
         examTaskDao = examTaskDB.examTaskDao();
         courseTaskDao = courseTaskDB.courseTaskDao();
+        debtTaskDao = debtTaskDB.debtTaskDao();
     }
 
     //Task
@@ -116,5 +127,19 @@ public class App extends Application {
     }
     public void setCourseTaskDao(CourseTaskDao courseTaskDao) {
         this.courseTaskDao = courseTaskDao;
+    }
+
+    //DebtTask
+    public DebtTaskDatabase getDebtTaskDatabase() {
+        return debtTaskDB;
+    }
+    public void setDebtTaskDatabase(DebtTaskDatabase debtTaskDatabase) {
+        this.debtTaskDB = debtTaskDatabase;
+    }
+    public DebtTaskDao getDebtTaskDao() {
+        return debtTaskDao;
+    }
+    public void setDebtTaskDao(DebtTaskDao debtTaskDao) {
+        this.debtTaskDao = debtTaskDao;
     }
 }

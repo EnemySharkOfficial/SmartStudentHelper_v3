@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.smartstudenthelper.CourseTask.screens.details.CourseTaskDetailsActivity;
 import com.example.smartstudenthelper.CourseTask.screens.main.CourseTaskMainActivity;
+import com.example.smartstudenthelper.DebtTask.screens.details.DebtTaskDetailsActivity;
+import com.example.smartstudenthelper.DebtTask.screens.main.DebtTaskMainActivity;
 import com.example.smartstudenthelper.ExamTask.screens.details.ExamTaskDetailsActivity;
 import com.example.smartstudenthelper.ExamTask.screens.main.ExamTaskMainActivity;
 import com.example.smartstudenthelper.Task.screens.details.TaskDetailsActivity;
@@ -102,6 +104,28 @@ public class MenuActivity extends AppCompatActivity {
             {
                 Intent myIntent = new Intent(MenuActivity.this, CourseTaskMainActivity.class);
                 MenuActivity.this.startActivity(myIntent);
+            }
+        });
+
+        Button addDebtTask = findViewById(R.id.addDebtTask);
+        addDebtTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, DebtTaskDetailsActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+                System.out.println("кнопка работает");
+            }
+        });
+
+        TextView showDebtTasks = findViewById(R.id.showDebtTasks);
+        showDebtTasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, DebtTaskMainActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+                System.out.println("кнопка работает");
             }
         });
     }

@@ -13,7 +13,7 @@
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <EditText
-        android:id="@+id/courseTaskName"
+        android:id="@+id/debtTaskName"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:gravity="top"
@@ -22,7 +22,7 @@
         android:padding="16dp" />
 
     <EditText
-        android:id="@+id/courseTaskCommentary"
+        android:id="@+id/debtTaskCommentary"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:gravity="top"
@@ -31,7 +31,7 @@
         android:padding="16dp" />
 
     <EditText
-        android:id="@+id/courseTaskDeadline"
+        android:id="@+id/debtTaskDeadline"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:gravity="top"
@@ -40,7 +40,7 @@
         android:padding="16dp" />
 
     <EditText
-        android:id="@+id/courseTaskExecutionTime"
+        android:id="@+id/debtTaskExecutionTime"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:gravity="top"
@@ -49,7 +49,7 @@
         android:padding="16dp" />
 
     <EditText
-        android:id="@+id/courseTaskReminderDate"
+        android:id="@+id/debtTaskReminderDate"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:gravity="top"
