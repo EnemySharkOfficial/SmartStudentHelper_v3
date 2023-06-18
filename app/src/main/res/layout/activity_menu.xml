@@ -6,16 +6,64 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/showFAQ"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="304dp"
-        android:layout_marginBottom="382dp"
+        android:layout_marginTop="397dp"
+        android:layout_marginBottom="289dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="FAQ" />
+
+    <TextView
+        android:id="@+id/showLifehacks"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="350dp"
+        android:layout_marginBottom="336dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Подсказки" />
+
+    <TextView
+        android:id="@+id/showPrinciples"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="443dp"
+        android:layout_marginBottom="243dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Принципы работы учебного заведения" />
+
+    <TextView
+        android:id="@+id/PsychologicalHelpMenu"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="488dp"
+        android:layout_marginBottom="198dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Психологическая помощь" />
+
+    <TextView
+        android:id="@+id/showTeachers"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="305dp"
+        android:layout_marginBottom="381dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Информация о преподавателях" />
 
     <TextView
         android:id="@+id/showCourseTasks"
@@ -107,18 +155,6 @@
         android:text="+" />
 
     <Button
-        android:id="@+id/FAQ"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="383dp"
-        android:text="+" />
-
-    <Button
         android:id="@+id/addDebtTask"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
@@ -128,6 +164,18 @@
         android:layout_marginTop="256dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="427dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/addTeacher"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="301dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="382dp"
         android:text="+" />
 
     <Button

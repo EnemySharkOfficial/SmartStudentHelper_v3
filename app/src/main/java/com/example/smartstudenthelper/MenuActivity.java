@@ -14,6 +14,10 @@ import com.example.smartstudenthelper.DebtTask.screens.details.DebtTaskDetailsAc
 import com.example.smartstudenthelper.DebtTask.screens.main.DebtTaskMainActivity;
 import com.example.smartstudenthelper.ExamTask.screens.details.ExamTaskDetailsActivity;
 import com.example.smartstudenthelper.ExamTask.screens.main.ExamTaskMainActivity;
+import com.example.smartstudenthelper.Info.FAQActivity;
+import com.example.smartstudenthelper.Info.LifehacksActivity;
+import com.example.smartstudenthelper.Info.PrinciplesActivity;
+import com.example.smartstudenthelper.PsychologicalHelp.PsychologicalMenuActivity;
 import com.example.smartstudenthelper.Task.screens.details.TaskDetailsActivity;
 import com.example.smartstudenthelper.Task.screens.main.TaskMainActivity;
 import com.example.smartstudenthelper.СontrolTask.screens.details.ControlTaskDetailsActivity;
@@ -124,6 +128,50 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent myIntent = new Intent(MenuActivity.this, DebtTaskMainActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+                System.out.println("кнопка работает");
+            }
+        });
+
+        TextView showLifehacks = findViewById(R.id.showLifehacks);
+        showLifehacks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, LifehacksActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+                System.out.println("кнопка работает");
+            }
+        });
+
+        TextView showFAQ = findViewById(R.id.showFAQ);
+        showFAQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, FAQActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+                System.out.println("кнопка работает");
+            }
+        });
+
+        TextView showPriciples = findViewById(R.id.showPrinciples);
+        showPriciples.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, PrinciplesActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+                System.out.println("кнопка работает");
+            }
+        });
+
+        TextView psychologicalMenu = findViewById(R.id.PsychologicalHelpMenu);
+        psychologicalMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent myIntent = new Intent(MenuActivity.this, PsychologicalMenuActivity.class);
                 MenuActivity.this.startActivity(myIntent);
                 System.out.println("кнопка работает");
             }

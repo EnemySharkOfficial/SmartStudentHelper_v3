@@ -10,11 +10,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".PsychologicalHelp.PsychologicalMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Info.PrinciplesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Info.FAQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Info.LifehacksActivity"
+            android:exported="false" />
         <activity
             android:name=".MenuActivity"
             android:exported="false" />
-
         <activity
             android:name=".Task.screens.main.TaskMainActivity"
             android:exported="true"
@@ -26,15 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Task.screens.details.TaskDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".СontrolTask.screens.details.ControlTaskDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".СontrolTask.screens.main.ControlTaskMainActivity"
             android:exported="true"
@@ -46,7 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ExamTask.screens.main.ExamTaskMainActivity"
             android:exported="true"
@@ -58,11 +64,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ExamTask.screens.details.ExamTaskDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".CourseTask.screens.main.CourseTaskMainActivity"
             android:exported="true"
@@ -74,11 +78,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CourseTask.screens.details.CourseTaskDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".DebtTask.screens.main.DebtTaskMainActivity"
             android:exported="true"
@@ -90,9 +92,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DebtTask.screens.details.DebtTaskDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
+
 </manifest>
