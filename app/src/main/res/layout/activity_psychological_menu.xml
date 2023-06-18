@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/HelpWithBurnout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="305dp"
+        android:layout_marginBottom="381dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Как справиться с эмоциональным выгоранием?" />
+
+    <TextView
+        android:id="@+id/ChatBots"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="167dp"
+        android:layout_marginBottom="519dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Получить помощь здесь и сейчас" />
+
+    <TextView
+        android:id="@+id/ProblemsWithStudy"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="213dp"
+        android:layout_marginBottom="473dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Проблемы с учебой" />
+
+    <TextView
+        android:id="@+id/NoMotivationToStudy"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="259dp"
+        android:layout_marginBottom="427dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Что делать если нет мотивации учиться?" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="-34dp"
+        android:layout_marginBottom="675dp"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <TextView
+        android:id="@+id/HowToBeatStress"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="77dp"
+        android:layout_marginBottom="609dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Как справиться со стрессом?" />
+
+    <TextView
+        android:id="@+id/WhichBooksToRead"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="122dp"
+        android:layout_marginBottom="564dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Книги для изменения взгляда на жизнь" />
+
+</RelativeLayout>

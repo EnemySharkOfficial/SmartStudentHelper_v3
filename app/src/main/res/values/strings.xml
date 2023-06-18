@@ -9,4 +9,21 @@
     <string name="task_deadline">Дата сдачи задания</string>
     <string name="task_execution_time">Время выполнения задачи</string>
     <string name="task_reminder_date">Дата напоминания</string>
+    <string name="lifehacks_text">Этот раздел содержит информацию о подсказках при обучении в учебном заведении. \n\n1. Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum
+\n\n2. Lorem ipsum lorem ipsumLorem ipsum lorem ipsum Lorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsum Lorem ipsum lorem ipsum
+\n\n3. Lorem ipsum lorem ipsumLorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum vLorem ipsum lorem ipsum
+\n\n4. Lorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsumLorem ipsum lorem ipsum</string>
+    <string name="FAQ_text">Часто задаваемые вопросы:\n\n1. Lorem ipsum?
+\n Lorem Lorem ipsum Lorem ipsum
+\n\n2. Lorem ipsumLorem ipsumLorem ipsumLorem ipsum?
+\nLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum v vLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum
+\n\n3. Lorem ipsumLorem ipsumLorem ipsum ipsum ipsum?
+\nLorem ipsum</string>
+    <string name="priciples_text">Общие принципы работы учебного заведения:
+\n\n1. Lorem ipsum
+\n Lorem Lorem ipsum Lorem ipsum
+\n\n2. Lorem ipsumLorem ipsumLorem ipsumLorem ipsum
+\nLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem Lorem ipsumLorem ipsum Lorem ipsum Lorem ipsum v vLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum
+\n\n3. Lorem ipsumLorem ipsum
+\nLorem ipsumipsumLorem ipsumLorem ipsumLoremмipipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem sumLorem ipsumLorem ipsumLoremмммммipsumLorem ipsumLorem ipsumLorem ipsumLorem </string>
 </resources>
