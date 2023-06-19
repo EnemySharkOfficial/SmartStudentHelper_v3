@@ -11,6 +11,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PsychologicalHelp.BeatBurnoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PsychologicalHelp.NoMotivationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PsychologicalHelp.StudyQuestionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PsychologicalHelp.ChatBotsAndAppsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PsychologicalHelp.BooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PsychologicalHelp.BeatStressActivity"
+            android:exported="false" />
+        <activity
             android:name=".PsychologicalHelp.PsychologicalMenuActivity"
             android:exported="false" />
         <activity

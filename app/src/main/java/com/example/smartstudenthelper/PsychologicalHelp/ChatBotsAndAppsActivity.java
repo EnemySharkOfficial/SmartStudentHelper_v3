@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.Info;
+package com.example.smartstudenthelper.PsychologicalHelp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import com.example.smartstudenthelper.R;
 
-public class PrinciplesActivity extends AppCompatActivity {
+public class ChatBotsAndAppsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_principles);
+        setContentView(R.layout.activity_chat_bots_and_apps);
 
-        TextView textView = findViewById(R.id.Principles_text);
+        TextView textView = findViewById(R.id.chatbots_apps_text);
         textView.setMovementMethod(new ScrollingMovementMethod());
     }
 }

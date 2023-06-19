@@ -7,10 +7,10 @@
     tools:context=".Info.FAQActivity">
 
     <TextView
-        android:id="@+id/FAQ_text"
+        android:id="@+id/Beat_Stress_text"
         android:layout_width="380dp"
         android:layout_height="703dp"
-        android:text="@string/lifehacks_text"
+        android:text="@string/how_to_beat_stress"
         android:lines="40"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
