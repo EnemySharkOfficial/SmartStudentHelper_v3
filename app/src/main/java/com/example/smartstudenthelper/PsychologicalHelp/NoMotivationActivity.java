@@ -1,4 +1,4 @@
-package com.example.smartstudenthelper.Info;
+package com.example.smartstudenthelper.PsychologicalHelp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import com.example.smartstudenthelper.R;
 
-public class PrinciplesActivity extends AppCompatActivity {
+public class NoMotivationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_principles);
+        setContentView(R.layout.activity_no_motivation);
 
-        TextView textView = findViewById(R.id.Principles_text);
+        TextView textView = findViewById(R.id.motivation_text);
         textView.setMovementMethod(new ScrollingMovementMethod());
     }
 }

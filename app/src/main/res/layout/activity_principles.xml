@@ -7,13 +7,14 @@
     tools:context=".Info.PrinciplesActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Principles_text"
         android:layout_width="380dp"
         android:layout_height="703dp"
-        android:text="@string/priciples_text"
-        android:lines="30"
+        android:text="@string/lifehacks_text"
+        android:lines="40"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:scrollbars="vertical"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

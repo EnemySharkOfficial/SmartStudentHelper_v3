@@ -7,10 +7,10 @@
     tools:context=".Info.FAQActivity">
 
     <TextView
-        android:id="@+id/FAQ_text"
+        android:id="@+id/study_questions_text"
         android:layout_width="380dp"
         android:layout_height="703dp"
-        android:text="@string/lifehacks_text"
+        android:text="@string/problems_with_study"
         android:lines="40"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
